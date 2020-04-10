@@ -6,7 +6,7 @@
         <PackageLicenseUrl>https://github.com/alzuma/HotCode.System/blob/master/LICENSE</PackageLicenseUrl>
         <RepositoryUrl>https://github.com/alzuma/HotCode.System</RepositoryUrl>
         <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
-        <PackageVersion>1.0.2</PackageVersion>
+        <PackageVersion>1.0.3</PackageVersion>
     </PropertyGroup>
 
     <ItemGroup>

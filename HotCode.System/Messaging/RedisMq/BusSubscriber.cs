@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Reflection;
 using System.Threading.Tasks;
 using HotCode.System.Messaging.interfaces;
 using Microsoft.AspNetCore.Builder;
@@ -90,7 +91,8 @@ namespace HotCode.System.Messaging.RedisMq
 
         private string ChanelName<T>()
         {
-            var @namespace = string.IsNullOrWhiteSpace(_defaultNamespace) ? string.Empty : _defaultNamespace;
+            var @namespace = typeof(T).GetCustomAttribute<MessageNamespaceAttribute>()?.Namespace ??
+                             _defaultNamespace;
             var chanelName = $"{@namespace}{typeof(T).Name.Underscore()}".ToLowerInvariant();
             return chanelName;
         }
