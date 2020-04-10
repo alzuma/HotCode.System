@@ -56,5 +56,15 @@ namespace HotCode.System
                 return string.IsNullOrWhiteSpace(subClaim?.Value) ? Guid.Empty.ToString("D") : subClaim.Value;
             }
         }
+        
+        protected ActionResult<T> Single<T>(T data)
+        {
+            if (data == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(data);
+        }
     }
 }
